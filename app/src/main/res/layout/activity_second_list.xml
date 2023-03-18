@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.SecondListActivity"
+    android:background="@mipmap/bg_jp">
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp14"/>
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/bg_list_kuang"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dp46"
+        android:layout_marginBottom="15dp"
+        android:layout_centerHorizontal="true">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/knowledgeRecyclerView"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:paddingStart="12dp"
+            android:paddingTop="@dimen/dp18"
+            android:paddingBottom="@dimen/dp18"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="410dp"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:layout_gravity="right"
+            android:paddingTop="@dimen/dp18"
+            android:paddingBottom="@dimen/dp18"
+            android:paddingStart="@dimen/dp36"/>
+    </LinearLayout>
+</RelativeLayout>

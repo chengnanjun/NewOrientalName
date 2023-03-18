@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:descendantFocusability="afterDescendants">
+
+    <RelativeLayout
+        android:id="@+id/rlVideo"
+        android:background="@android:color/black"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+        <FrameLayout
+            android:id="@+id/surface_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/thumb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:background="#000000"
+            android:scaleType="fitCenter" />
+
+        <RelativeLayout
+            android:id="@+id/fu_volume_re"
+            android:layout_width="42dp"
+            android:layout_height="103dp"
+            android:layout_above="@+id/layout_bottom"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="40dp"
+            android:visibility="gone"
+            android:background="@mipmap/ic_set_volume">
+
+            <com.boll.neworientalname.view.VerticalSeekBar
+                android:id="@+id/fu_voiceSeekBarTop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:focusable="true"
+                android:indeterminateOnly="false"
+                android:maxWidth="4dp"
+                android:progress="0"
+                android:progressDrawable="@drawable/seekbar_style"
+                android:thumb="@drawable/ver_thumb" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layout_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:background="#66000000"
+            >
+            <ImageView
+                android:id="@+id/ivPlayOrPauseScreen"
+                android:layout_width="@dimen/dp20"
+                android:layout_height="@dimen/dp20"
+                android:layout_marginStart="@dimen/dp10"
+                android:src="@mipmap/ic_play_video" />
+            <TextView
+                android:id="@+id/current"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="00:00"
+                android:textColor="#ffffff" />
+
+            <SeekBar
+                android:id="@+id/bottom_seek_progress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.0"
+                android:background="@null"
+                android:max="100"
+                android:maxHeight="4dp"
+                android:minHeight="4dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:progressDrawable="@drawable/jz_bottom_seek_progress"
+                android:thumb="@drawable/jz_bottom_seek_thumb" />
+
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textColor="#ffffff" />
+            <ImageView
+                android:id="@+id/set_volume"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="@dimen/dp10"
+                android:padding="4dp"
+                android:src="@mipmap/set_volume" />
+            <ImageView
+                android:id="@+id/fullscreen"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="@dimen/dp10"
+                android:padding="4dp"
+                android:src="@mipmap/ic_back_full_screen" />
+
+        </LinearLayout>
+
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/rlBottomScreen"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_marginLeft="6dp"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            android:layout_marginBottom="4dp"-->
+<!--            android:gravity="center_vertical">-->
+
+<!--&lt;!&ndash;            <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                android:id="@+id/ivPlayFrontScreen"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="16dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="16dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:src="@mipmap/iv_play_front" />&ndash;&gt;-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/ivPlayOrPauseScreen"-->
+<!--                android:layout_width="@dimen/dp16"-->
+<!--                android:layout_height="@dimen/dp16"-->
+<!--                android:layout_marginLeft="@dimen/dp8"-->
+<!--                android:src="@mipmap/ic_play_video" />-->
+
+<!--&lt;!&ndash;            <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                android:id="@+id/ivPlayNextScreen"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="@dimen/dp16"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="@dimen/dp16"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_marginLeft="@dimen/dp8"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_toRightOf="@+id/ivPlayOrPauseScreen"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:src="@mipmap/ic_play_next" />&ndash;&gt;-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/fullscreen"-->
+<!--                android:layout_width="18dp"-->
+<!--                android:layout_height="18dp"-->
+<!--                android:layout_alignParentRight="true"-->
+<!--                android:layout_marginRight="2dp"-->
+<!--                android:padding="4dp"-->
+<!--                android:src="@mipmap/ic_full_screen" />-->
+<!--        </RelativeLayout>-->
+
+        <ImageView
+            android:id="@+id/back_tiny"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="6dp"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:indeterminateDrawable="@drawable/jz_loading"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/start_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/start"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:src="@mipmap/ic_play" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/replay_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/start_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:text="Replay"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/retry_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="视频加载失败"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/retry_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/retry_bg"
+                android:paddingLeft="9dp"
+                android:paddingTop="4dp"
+                android:paddingRight="9dp"
+                android:paddingBottom="4dp"
+                android:text="点击重新加载"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/volume_re"
+        android:layout_width="25dp"
+        android:layout_height="@dimen/dp60"
+        android:layout_above="@+id/llBottomTime"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="40dp"
+        android:visibility="gone"
+        android:background="@mipmap/ic_set_volume">
+
+        <com.boll.neworientalname.view.VerticalSeekBar
+            android:id="@+id/voiceSeekBarTop"
+            android:indeterminateOnly="false"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:focusable="true"
+            android:maxWidth="4dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/seekbar_style"
+            android:thumb="@drawable/ver_thumb" />
+    </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llBottomTime"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:background="#66000000"
+            >
+
+            <ImageView
+                android:id="@+id/ivPlayOrPause"
+                android:layout_width="@dimen/dp16"
+                android:layout_height="@dimen/dp16"
+                android:layout_marginStart="@dimen/dp10"
+                android:src="@mipmap/ic_play_video" />
+            <TextView
+                android:id="@+id/currentTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="00:00"
+                android:textColor="#ffffff" />
+
+            <SeekBar
+                android:id="@+id/bottomSeekProgress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.0"
+                android:background="@null"
+                android:max="100"
+                android:maxHeight="4dp"
+                android:minHeight="4dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:progressDrawable="@drawable/jz_bottom_seek_progress"
+                android:thumb="@drawable/jz_bottom_seek_thumb" />
+
+            <TextView
+                android:id="@+id/totalTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textColor="#ffffff" />
+            <ImageView
+                android:id="@+id/ivSet_volume"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:padding="4dp"
+                android:layout_marginStart="@dimen/dp6"
+                android:src="@mipmap/set_volume" />
+            <ImageView
+                android:id="@+id/ivFullScreen"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="@dimen/dp10"
+                android:padding="4dp"
+                android:src="@mipmap/ic_full_screen" />
+
+
+        </LinearLayout>
+
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/rlBottom"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@color/black"-->
+<!--            android:alpha="0.3"-->
+<!--            android:gravity="center_vertical" >-->
+<!--            -->
+<!--        </RelativeLayout>-->
+
+
+    </RelativeLayout>
+
+</LinearLayout>

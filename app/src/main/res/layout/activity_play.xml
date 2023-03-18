@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@mipmap/bg_main_chinese"
+    tools:context=".activity.PlayActivity">
+
+    <RelativeLayout
+        android:layout_width="450dp"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="410dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/play_left_bg">
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/dp10"
+                android:scrollbars="none">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="370dp"
+                        android:layout_height="208.125dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_centerHorizontal="true"
+                        app:cardCornerRadius="10dp">
+                        <com.boll.neworientalname.video.JzvdStd
+                            android:id="@+id/jzvdStd"
+                            android:layout_width="370dp"
+                            android:layout_height="208.125dp"/>
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:id="@+id/name_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="235dp"
+                        android:layout_marginStart="15dp"
+                        android:text="数学大赛"
+                        android:textSize="@dimen/sp16"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                    <LinearLayout
+                        android:id="@+id/play_ll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="262dp">
+
+                        <View
+                            android:layout_width="3dp"
+                            android:layout_height="14dp"
+                            android:background="@mipmap/green_bg"
+                            android:layout_gravity="center"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_content_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:text="课程介绍"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/desc_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/play_ll"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:layout_marginEnd="34dp"
+                        android:layout_marginBottom="5dp"
+                        android:lineSpacingExtra="10dp"
+                        android:text="本集内容对应贝瓦爱数学中数学大赛的故事，通过老师课堂的娓娓道来，小朋友在听故事内容的同时，也收获了一些数学小知识，并学会在我们日常生活中去运用这些小知识。"
+                        android:textColor="#232323"
+                        android:textSize="13sp"/>
+                </RelativeLayout>
+            </androidx.core.widget.NestedScrollView>
+
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/play_list_bg">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/video_list_recycle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/tablerv_style"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="21dp"/>
+    </LinearLayout>
+</LinearLayout>

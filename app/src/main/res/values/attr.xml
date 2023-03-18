@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ContentTitleView">
+        <attr name="title" format="string"/>
+    </declare-styleable>
+
+    <!--自定义 Style 属性-->
+    <declare-styleable name="ScrollbarStyle">
+        <attr name="mScrollbarThumbVertical" format="reference" />
+        <attr name="mScrollbarTrackVertical" format="reference" />
+        <attr name="mScrollbarSize" format="dimension" />
+        <attr name="mScrollbars">
+            <!-- No scrollbar is displayed. -->
+            <flag name="none" value="0x00000000" />
+            <!-- Displays horizontal scrollbar only. -->
+            <flag name="horizontal" value="0x00000100" />
+            <!-- Displays vertical scrollbar only. -->
+            <flag name="vertical" value="0x00000200" />
+        </attr>
+        <attr name="mFadeScrollbars" format="boolean" />
+        <attr name="mScrollbarStyle">
+            <!-- Inside the padding and overlaid. -->
+            <enum name="insideOverlay" value="0x0" />
+            <!-- Inside the padding and inset. -->
+            <enum name="insideInset" value="0x01000000" />
+            <!-- Edge of the view and overlaid. -->
+            <enum name="outsideOverlay" value="0x02000000" />
+            <!-- Edge of the view and inset. -->
+            <enum name="outsideInset" value="0x03000000" />
+        </attr>
+    </declare-styleable>
+
+</resources>
